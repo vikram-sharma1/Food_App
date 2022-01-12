@@ -24,6 +24,8 @@ body{
 
     height: 158px;
 }
+
+
 #home, #random, #day{
     cursor: pointer;
 }
