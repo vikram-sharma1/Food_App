@@ -74,7 +74,16 @@
     console.log('User_name:', User_name)
 
     var append_name = document.createElement('h3')
-    append_name.textContent = "Hello ! "+User_name
+
+
+
+    if(User_name == null){
+        append_name.textContent = "Hello ! "
+    }
+    else{
+        append_name.textContent = "Hello ! "+ User_name
+    }
+
     append_name.setAttribute("class", "append_name")
     var log_out = document.createElement('p')
     log_out.setAttribute("class", "log_out")
