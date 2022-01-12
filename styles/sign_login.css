@@ -1,0 +1,51 @@
+#logtop{
+    /* border: 1px solid red; */
+    margin: 0px;
+    height: 60px;
+    text-align: center;
+    background-color: rgb(28,118,144);
+    color: white;
+}
+#logtop > p{
+    padding-top: 8px;
+    font-size: 35px;
+    margin: 0px;
+}
+
+#inplog{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#inplog>div:nth-child(1){
+    width: 25%;
+    font-size: 25px;
+    /* background-color: white; */
+    /* margin-right: 10px; */
+    margin-left: 25px;
+    padding-top: 10px;
+}
+#inplog >div > input{
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+#formmain{
+    /* border: 1px solid black; */
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#signupbutton{
+    padding: 10px 65px;
+    margin-left: 35%;
+    margin-top: 4%;
+    border-radius: 10px;
+    /* border: 1px black; */
+}
+#go_login{
+    text-align: center;
+    color: red;
+}
+

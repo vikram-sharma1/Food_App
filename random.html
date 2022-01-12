@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill & Grill</title>
+	
+    <script src="https://kit.fontawesome.com/683b4b40e3.js" 	crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/indexdown.css">
+</head>
+<body>
+    <div id="container">
+        <!-- navbar -->
+    </div>
+
+    <div id="meal">
+        <!-- meal Display -->
+    </div>
+</body>
+</html>
+
+<script type="module">
+
+    // navbar import -------------
+
+    import  {navbar, down} from './script/navbar.js'
+    // console.log('navbar:', navbar)
+
+    let container = document.getElementById('container')
+
+    container.innerHTML = navbar()
+
+
+    //----------------------------------------------------------
+
+    //--------------------------------------------------------
+
+    let home = document.getElementById('home')
+    home.addEventListener("click", function(){
+        window.location.href = 'index_login.html'
+    })
+
+
+    let random = document.getElementById('random')
+    random.addEventListener("click", function(){
+        window.location.href = 'random.html'
+    })
+    let day = document.getElementById('day')
+    day.addEventListener("click", function(){
+        window.location.href = 'day.html'
+    })
+
+
+    // --------------------------------------------------------------------
+
+    import {randomReceipe, appendData} from './script/random.js'
+    // console.log('randomReceipe:', randomReceipe)
+
+    let url = 'https://www.themealdb.com/api/json/v1/1/categories.php'
+    var location = document.getElementById('meal')
+
+    let response = randomReceipe(url)
+
+    response.then(function(res){
+        console.log('res:', res)
+
+        appendData(res, location)
+
+    })
+    
+    var User_name = JSON.parse(localStorage.getItem("loginName"))
+    console.log('User_name:', User_name)
+
+    var append_name = document.createElement('h3')
+    append_name.textContent = "Hello ! "+User_name
+    append_name.setAttribute("class", "append_name")
+    var log_out = document.createElement('p')
+    log_out.setAttribute("class", "log_out")
+    log_out.textContent = "Logout"
+    log_out.style.cursor = "pointer"
+    log_out.addEventListener("click", function(){
+        alert("Logout Sucessful")
+        window.location.href = 'index.html'
+    })
+    var div = document.createElement(div)
+    div.append(append_name, log_out)
+
+    document.getElementById('name_show').append(div)
+  
+
+    // debounc--------------------------------
+
+    import {byname, debounce, search_append} from './script/debounce.js'
+
+var input = document.getElementById('input')
+
+
+var set = document.querySelector('#meal')
+
+input.addEventListener("input", function(){
+    var inputbox = document.querySelector('.show')
+    inputbox.style.display = "block"
+    debounce(fun(), 1000)
+})
+
+
+function fun(){
+
+var location = document.querySelector('.show')
+var input = document.getElementById('input').value
+// console.log(input)
+
+    let response = byname(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+    // console.log('byname:', byname)
+
+    response.then(function(res){
+        console.log('res:', res)
+
+        search_append(res, location,set)
+
+
+
+    })
+
+}
+
+    
+
+
+</script>

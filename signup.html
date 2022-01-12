@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill & Grill</title>
+	<script src="https://kit.fontawesome.com/683b4b40e3.js" 	crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <link rel="stylesheet" href="./styles/indexdown.css"> -->
+    <link rel="stylesheet" href="./styles/sign_login.css">
+</head>
+<body>
+    <div id="container">
+        <!-- navbar -->
+    </div>
+    <div id="signup">
+        <!-- signup & SignUp -->
+    </div>
+    
+    
+</body>
+</html>
+
+
+<script type="module">
+
+
+// navbar import -------------
+
+    import {navbar, down} from './script/navbar.js'
+    // console.log('navbar:', navbar)
+
+    let container = document.getElementById('container')
+
+    container.innerHTML = navbar()
+
+
+    //-----------------------------
+    import signup from './script/signup.js'
+  
+
+    let signup_page = document.getElementById('signup')
+
+    signup_page.innerHTML = signup()
+
+
+    let home = document.getElementById('imagenav')
+    home.style.cursor = 'pointer'
+    home.addEventListener('click', function(){
+        window.location.href = 'index.html'
+    })
+
+
+
+    //signUp with the URL----------------------------------
+
+    let reg = document.getElementById('register')
+    reg.addEventListener('submit', function(){
+        register(event)
+    })
+
+    let goto_login = document.getElementById('go_login')
+    goto_login.style.cursor = 'pointer'
+    goto_login.addEventListener('click', function(){
+
+        window.location.href = 'login.html'
+    })
+
+
+
+    async function register(event){
+
+        try{
+        event.preventDefault()
+
+            
+        var register_data = {
+
+            name : document.querySelector('#name').value,
+            email : document.querySelector('#email').value,
+            password : document.querySelector('#password').value,
+            username : document.querySelector('#user_name').value,
+            mobile : document.querySelector('#mobile').value,
+            description : document.querySelector('#des').value,
+
+            }
+
+
+            register_data = JSON.stringify(register_data)
+            console.log('register_data:', register_data)
+        }
+
+        catch(err){
+            console.log('err:', err)
+        }
+
+
+    let url = `https://masai-api-mocker.herokuapp.com/auth/register`;
+
+    let response = await fetch(url, {
+
+        method:'POSt',
+        body: register_data,
+        headers:{
+
+            "Content-Type":'application/json'
+
+        }
+
+
+    })
+
+        let data = await response.json()
+        console.log('data:', data)
+        var x = data.message
+
+
+        if(data.error == false){
+            alert(x)
+            window.location.href = 'login.html'
+        }
+        else{
+            alert(x)
+        }
+
+
+    }
+
+
+   
+
+
+  
+
+
+</script>

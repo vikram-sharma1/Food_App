@@ -1,0 +1,68 @@
+#logtop{
+    /* border: 1px solid red; */
+    margin: 0px;
+    height: 60px;
+    text-align: center;
+    background-color: rgb(28,118,144);
+    color: white;
+}
+#logtop > p{
+    padding-top: 8px;
+    font-size: 35px;
+    margin: 0px;
+}
+#backimg{
+    /* border: 1px solid red; */
+    margin-top: 0px;
+    height: 500px;
+     background-image: url('https://media.istockphoto.com/vectors/fast-food-seamless-pattern-with-vector-line-icons-of-hamburger-pizza-vector-id1182393436?k=20&m=1182393436&s=612x612&w=0&h=dBfdRS9u4_maG_64tWyZNNSNZBg6aWcuDEw95Xno8oI=');
+
+}
+button{
+    
+    width: 15%;
+    background:#1AAB8A;
+    color:#fff;
+    margin-left: 70%;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    }
+    button:hover{
+    background:#fff;
+    color:#1AAB8A;
+    }
+    button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+    }
+    button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+    }
+    button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+    }
+    #buttone{
+        margin-top: 90px;
+    }
+
+
+    #logbutt{
+        /* margin-top: 5%; */
+        padding-top: 6%;
+    }

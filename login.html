@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill & Grill</title>
+	<script src="https://kit.fontawesome.com/683b4b40e3.js" 	crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <link rel="stylesheet" href="./styles/indexdown.css"> -->
+    <link rel="stylesheet" href="./styles/sign_login.css">
+</head>
+<body>
+    <div id="container">
+        <!-- navbar -->
+    </div>
+    <div id="login">
+        <!-- signup & SignUp -->
+    </div>
+    
+</body>
+</html>
+
+
+<script type="module">
+
+
+// navbar import -------------
+
+import {navbar, down} from './script/navbar.js'
+    // console.log('navbar:', navbar)
+
+    let container = document.getElementById('container')
+
+    container.innerHTML = navbar()
+
+
+
+    //-----------------------------
+
+    import login from './script/login.js'
+  
+
+    let login_page = document.getElementById('login')
+
+    login_page.innerHTML = login()
+
+
+    let home = document.getElementById('imagenav')
+    home.style.cursor = 'pointer'
+
+    home.addEventListener('click', function(){
+        window.location.href = 'index.html'
+    })
+
+
+    let homepage = document.getElementById('home')
+    homepage.addEventListener("click", function(){
+        window.location.href = 'index.html'
+    })
+
+
+    let random = document.getElementById('random')
+    random.addEventListener("click", function(){
+        alert("Please Login")
+        window.location.href = 'login.html'
+
+    })
+    let day = document.getElementById('day')
+    day.addEventListener("click", function(){
+        alert("Please Login")
+        window.location.href = 'login.html'
+
+    })
+
+
+    // Login with the URL -----------------------
+
+
+    let login_data_fun = document.getElementById('login_data')
+    login_data_fun.addEventListener("submit", function(){
+        login_data(event)    
+    })
+
+    async function login_data(e){
+
+        e.preventDefault()
+
+        var login_data = {
+
+            username : document.getElementById('username').value,
+            password : document.getElementById('password').value,
+
+        }
+
+        login_data = JSON.stringify(login_data)
+
+        var login_url = `https://masai-api-mocker.herokuapp.com/auth/login`
+
+        var response = await fetch(login_url,{
+
+            method : "POST",
+
+            body : login_data,
+
+            headers : {
+                "Content-Type" :"application/json"
+            }
+
+
+
+        })
+
+        var data = await response.json()
+        console.log('data:', data)
+
+        if(data.error == false){
+            alert("Login Successful")
+            window.location.href = "index_login.html"
+        }
+        else{
+            alert("Login Failed, Invalid Details")
+        }
+
+
+        let username = document.getElementById('username').value
+        // console.log('username:', username)
+        let token = data.token
+        // console.log('token:', token)
+
+        // getUser(username,token)
+        getUsers(username,token)
+    }
+
+
+    async function getUsers(username,token){
+
+        var api_link = `https://masai-api-mocker.herokuapp.com/user/${username}`
+
+        var response = await fetch(api_link, {
+
+
+            headers : {
+                "Content-Type" : "application/json",
+                Authorization : `Bearer ${token}`
+            }
+
+        })
+
+        var data_final = await response.json()
+        console.log('data_final:', data_final)
+
+        var name = data_final.name
+        console.log('name:', name)
+
+        localStorage.setItem("loginName", JSON.stringify(name))
+    }
+
+
+
+
+</script>

@@ -1,0 +1,211 @@
+body{
+    margin: 0px;
+}
+
+#main{
+    width: 100%;
+    height: 160px;
+    background-color: rgb(246,246,246);
+    display: flex;
+    justify-content: space-between;
+}
+
+.top{
+    flex: 2;
+}
+.search{
+    flex: 5;
+}
+#receipe{
+    flex: 2.5;
+}
+
+#main>div:nth-child(1)>img{
+
+    height: 158px;
+}
+
+
+#name_show{
+    /* border: 1px solid black; */
+    height: 50px;
+    border-bottom: 1px solid red;
+}
+
+#receipe{
+    display: flex;
+    gap: 25px;
+}
+#receipe > div{
+    font-size: 20px;
+    height: 40px;
+    margin-top: 70px;
+    margin-right: 15px;
+}
+
+
+.searchab{
+    display: flex;
+    /* border: 1px solid black; */
+    width: 80%;
+}
+.inp{
+    margin-top: 55px;
+    height: 50px;
+    width: 100%;
+}
+
+.show{
+    /* border: 1px solid red; */
+    width: 65%;
+    height: 300px;
+    margin-left: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: none;
+    overflow-x: scroll;
+}
+
+
+::-webkit-scrollbar{
+    border-radius: 10px;
+    background-color: rgb(228, 228, 228);
+    width: 5px;
+    height: 0px;
+}
+
+
+input{
+    width: 60%;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    outline: none;
+    font-size: 25px;
+    padding-left: 20px;
+    border: 3px solid rgb(143, 143, 143);
+}
+
+.logo{
+    height: 40px;
+    width: 10%;
+    
+}
+.fas{
+    height: 82%;
+    font-size: 35px;
+    margin-top: 62px;
+    border-left: 1px solid black;
+    padding-left: 10px;
+    padding-top: 2px;
+    margin-left: -55px;
+    
+}
+input{
+    width: 98%;
+    height: 85%;
+    background-color: rgb(246,246,246);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.main_divday{
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.instr{
+    width: 90%;
+    margin: auto;
+}
+
+.img_divday{
+    width: 25%;
+    margin: auto;
+}
+.fas{
+    color: rgb(136, 136, 136);
+}
+
+
+.img_divday > img{
+    width: 99%;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+.img_divday>img:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.title{
+    text-align: center;
+    margin: 10px;
+}
+.link{
+    text-align: center;
+    margin: 10px;
+    text-decoration: underline;
+}
+.type{
+    text-align: center;
+    margin: 10px;
+}
+.video_frame{
+    width: 110%;
+    border: 1px solid black;
+   /* margin-left: 10%; */
+}
+
+#vdmain{
+    /* border: 1px solid black;   */
+    width: 98%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.main_div{
+    border: 1px solid black;
+    width: 99%;
+    display: flex;
+    margin-top: 2px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+
+.img_div{
+    flex: 1;
+}
+
+.img_div > img{
+    width: 90%;
+    border-radius: 50px;
+    margin-left: 5px;
+}
+.data_div{
+    flex: 6;
+    margin-left: 15px;
+    line-height: 8px;
+}
+
+
+.append_name , .log_out{
+    /* border: 1px solid black; */
+    margin: 2px;
+    text-align: center;
+}
+
+.log_out:hover{
+    zoom: 1.5;
+    color: red;
+}
+
+
+
+
+
+
