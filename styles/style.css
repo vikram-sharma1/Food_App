@@ -28,6 +28,10 @@ body{
 
 #home, #random, #day{
     cursor: pointer;
+
+}
+#home:hover, #random:hover, #day:hover{
+    color: red;
 }
 
 
