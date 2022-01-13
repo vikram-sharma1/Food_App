@@ -117,7 +117,7 @@ import {navbar, down} from './script/navbar.js'
 
         if(data.error == false){
             alert("Login Successful")
-            window.location.href = "index_login.html"
+            // window.location.href = "index_login.html"
         }
         else{
             alert("Login Failed, Invalid Details")
@@ -125,9 +125,9 @@ import {navbar, down} from './script/navbar.js'
 
 
         let username = document.getElementById('username').value
-        // console.log('username:', username)
+        console.log('username:', username)
         let token = data.token
-        // console.log('token:', token)
+        console.log('token:', token)
 
         // getUser(username,token)
         getUsers(username,token)
@@ -154,7 +154,17 @@ import {navbar, down} from './script/navbar.js'
         var name = data_final.name
         console.log('name:', name)
 
-        localStorage.setItem("loginName", JSON.stringify(name))
+        send_data(data_final)
+
+        
+    }
+
+    function send_data(ele){
+
+        localStorage.setItem("loginName", JSON.stringify(ele))
+            window.location.href = "index_login.html"
+
+
     }
 
 
