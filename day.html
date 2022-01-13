@@ -69,15 +69,19 @@
 
 
     var User_name = JSON.parse(localStorage.getItem("loginName"))
+
+   var x  = User_name.name
     console.log('User_name:', User_name)
 
     var append_name = document.createElement('h3')
-    if(User_name == null){
+
+    if(x == null){
         append_name.textContent = "Hello ! "
     }
     else{
-        append_name.textContent = "Hello ! "+ User_name
+        append_name.textContent = "Hello ! "+ x
     }
+
 
     append_name.setAttribute("class", "append_name")
     var log_out = document.createElement('p')
